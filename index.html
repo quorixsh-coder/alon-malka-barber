@@ -3,6 +3,7 @@
 <head>
 <title>אלון מלכה · קביעת תור · עכו</title>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me https://api.whatsapp.com mailto: tel:; upgrade-insecure-requests">
 <script>document.documentElement.lang="he";document.documentElement.dir="rtl";</script>
 <meta name="description" content="אלון מלכה, עיצוב שיער לגברים וילדים. הזית 8, עכו. 5.0 בגוגל מתוך 178 ביקורות. בוחרים שירות, יום ושעה, ושולחים בקשה לתור.">
 <meta name="theme-color" content="#f3f4f6">
@@ -23,7 +24,6 @@
 <meta name="twitter:image" content="https://quorixsh-coder.github.io/alon-malka-barber/hero.webp">
 <!-- בעת העלאה לדומיין: להחליף og:image ו-canonical לכתובות מלאות (https://domain/...) — וואטסאפ לא מציג תמונה בנתיב יחסי -->
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HairSalon","name":"אלון מלכה · Man Hair Design","description":"עיצוב שיער לגברים וילדים בעכו","image":"https://quorixsh-coder.github.io/alon-malka-barber/hero.webp","telephone":"+972-53-544-3241","address":{"@type":"PostalAddress","streetAddress":"הזית 8","addressLocality":"עכו","addressCountry":"IL"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday","Monday","Tuesday","Wednesday","Thursday"],"opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"14:30"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"178","bestRating":"5"},"knowsLanguage":["he","en"],"sameAs":["https://www.facebook.com/770549589722907"]}
@@ -437,12 +437,27 @@ html.a-font body,html.a-font button,html.a-font input,html.a-font textarea{font-
 html.a-font .mono,html.a-font .phone,html.a-font .slot{font-family:Arial,sans-serif!important}
 html.a-still *,html.a-still *::before,html.a-still *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+/* v6-fix1 a11y-corner */
+.a11y-btn{width:40px;height:40px;opacity:.9;box-shadow:0 3px 10px -6px rgba(14,16,19,.45);position:relative}
+.a11y-btn::before{content:"";position:absolute;inset:-7px;border-radius:18px}
+.a11y-btn:hover,.a11y-btn:focus-visible,.a11y-btn[aria-expanded="true"],html.a11y-contrast .a11y-btn{opacity:1}
+.a11y-btn:focus-visible{outline:3px solid var(--iceT);outline-offset:2px;box-shadow:0 0 0 2px #fff}
+.a11y-btn svg{width:20px;height:20px}
+@media (min-width:900px){.a11y-btn{width:44px;height:44px}.a11y-btn svg{width:22px;height:22px}}
+
+.a11y-btn{border-radius:13px}
+.a11y{inset-inline-end:max(10px,env(safe-area-inset-left,0px));bottom:calc(var(--nav) + env(safe-area-inset-bottom,0px) + 10px)}
+footer{padding-bottom:60px}
+.a11y-pan{bottom:50px}
+@media (min-width:900px){.a11y-pan{bottom:54px}.a11y-btn{border-radius:14px}}
+@media (min-width:1024px){.a11y{bottom:max(10px,env(safe-area-inset-bottom,0px))}footer{padding-bottom:64px}}
+/* /v6-fix1 */
 </style>
 
 <a class="skip" href="#book">דלג לקביעת תור</a>
 
 <header class="top" id="top">
-  <div class="demo">הצעת עיצוב לאתר של אלון מלכה · גרסת הדגמה, בקשות תור לא נשלחות</div>
+  <div class="demo">אתר לדוגמה שהוכן עבור אלון מלכה. אינו האתר הרשמי של העסק עד לאישורו.</div>
   <div class="bar">
     <a class="brand" href="#main" aria-label="אלון מלכה, לראש העמוד">
       <span class="mk" aria-hidden="true">AM</span>
@@ -632,15 +647,15 @@ html.a-still *,html.a-still *::before,html.a-still *::after{animation:none!impor
   <div class="biz">
     <b>אלון מלכה · Man Hair Design</b>
     <span>הזית 8, עכו · טלפון <span class="phone" style="font-size:.9rem">053-544-3241</span></span>
-    <span>ח.פ./ע.מ.: <span class="ph-hold">יעודכן</span></span>
+    <span>ח.פ./ע.מ.: <span class="ph-hold">[לעדכון ע״י בעל העסק]</span></span>
   </div>
   <nav class="legal" aria-label="מידע משפטי ונגישות">
     <button type="button" data-legal="privacy">מדיניות פרטיות</button>
     <button type="button" data-legal="terms">תנאי שימוש וביטולים</button>
     <button type="button" data-legal="a11y">הצהרת נגישות</button>
-    <button type="button" data-legal="biz">פרטי העסק ותמונות</button>
+    <button type="button" data-legal="biz">פרטי העסק, תמונות וזכויות</button>
   </nav>
-  <p class="disc">אתר הדגמה שעוצב כהצעה לעסק. אינו האתר הרשמי של אלון מלכה, ובקשות תור לא נשלחות. תמונות: המספרה, עמדת החפיפה, כיסא המכונית וכל תמונות התספורות הן של העסק (מעמוד הפייסבוק שלו). תמונות השתייה, הזקן והילד בגלימה נוצרו להמחשה ומסומנות כך. © <span id="yr">2026</span></p>
+  <p class="disc">אתר לדוגמה שהוכן עבור אלון מלכה. אינו האתר הרשמי של העסק עד לאישורו. בקשות תור דרכו לא נשלחות. תמונות: המספרה, עמדת החפיפה, כיסא המכונית וכל תמונות התספורות הן של העסק (מעמוד הפייסבוק שלו). תמונות השתייה, הזקן והילד בגלימה נוצרו להמחשה ומסומנות כך. © <span id="yr">2026</span></p>
 </footer>
 
 <nav class="tabbar" aria-label="ניווט מהיר">
@@ -674,58 +689,47 @@ html.a-still *,html.a-still *::before,html.a-still *::after{animation:none!impor
         <button type="button" role="tab" id="t-privacy" aria-controls="p-privacy" data-tab="privacy">פרטיות</button>
         <button type="button" role="tab" id="t-terms" aria-controls="p-terms" data-tab="terms">תנאים וביטולים</button>
         <button type="button" role="tab" id="t-a11y" aria-controls="p-a11y" data-tab="a11y">נגישות</button>
-        <button type="button" role="tab" id="t-biz" aria-controls="p-biz" data-tab="biz">העסק</button>
+        <button type="button" role="tab" id="t-biz" aria-controls="p-biz" data-tab="biz">העסק וזכויות</button>
       </div>
     </div>
     <div class="dlg-b">
       <div role="tabpanel" id="p-privacy" aria-labelledby="t-privacy" tabindex="0">
-        <h3>בקצרה</h3>
-        <p>זהו אתר הדגמה. הוא לא אוסף, לא שולח ולא שומר את הפרטים שלכם בשום שרת.</p>
-        <h3>באתר החי</h3>
-        <ul>
-          <li>לבקשת תור נאסוף רק: שם, טלפון, השירותים, המועד והערה אם כתבתם.</li>
-          <li>הפרטים ישמשו רק לתיאום התור ולאישורו מולכם, ויישמרו רק כל עוד צריך לטפל בו.</li>
-          <li>לא נמכור ולא נעביר את הפרטים לאחרים, ולא נשלח פרסומות.</li>
-          <li>עיון או מחיקה של הפרטים: בטלפון <span class="phone" style="font-size:.9rem">053-544-3241</span>.</li>
-        </ul>
-        <h3>עוגיות ואחסון בדפדפן</h3>
-        <p>אין באתר עוגיות מעקב ואין כלי סטטיסטיקה או פרסום, ולכן אין צורך בבאנר עוגיות. לנוחותכם נשמרים בדפדפן שלכם בלבד (localStorage) השירותים שבחרתם והעדפות הנגישות. אפשר למחוק אותם כאן:</p>
+        <h3>מדיניות פרטיות</h3>
+        <p><b>זהו אתר הדגמה: הוא לא אוסף, לא שולח ולא שומר את הפרטים שלכם בשום שרת.</b></p><p><b>מי אחראי על המידע:</b> אלון מלכה · Man Hair Design, ח.פ./ע.מ. <span class="ph-hold">[לעדכון ע״י בעל העסק]</span>, הזית 8, עכו. טלפון <span dir="ltr">053-544-3241</span>.</p>
+        <p><b>מה נאסף:</b> רק מה שממלאים בטופס בקשת התור: שם, טלפון, השירותים שבחרתם, היום והשעה, והערה אם כתבתם. לא נאסף שום מידע נוסף, ואין צורך בהרשמה.</p>
+        <p><b>למה ועל איזה בסיס:</b> רק כדי לטפל בבקשת התור שביקשתם: לאשר, לתאם את התור ולחזור אליכם. הבסיס לשימוש הוא הבקשה שלכם. אין חובה חוקית למסור את הפרטים, אבל בלעדיהם לא נוכל לטפל בבקשת התור.</p>
+        <p><b>מי מקבל את המידע:</b> רק אלון, דרך טלפון או וואטסאפ. הודעת וואטסאפ עוברת דרך שירות WhatsApp, לפי התנאים שלו. המידע לא נמכר, לא מועבר לאחרים ולא משמש לשיווק או לפרסום.</p>
+        <p><b>כמה זמן נשמר:</b> עד סיום הטיפול בבקשת התור, ולכל היותר 90 יום <span class="ph-hold">[לעדכון ע״י בעל העסק]</span>, ואז נמחק.</p>
+        <p><b>הזכויות שלכם:</b> לעיין במידע שנשמר עליכם, לבקש לתקן אותו או למחוק אותו. פונים בטלפון <span dir="ltr">053-544-3241</span>, ונטפל בבקשה בהקדם.</p>
+        <p><b>עוגיות ומעקב:</b> אין באתר עוגיות מעקב, אין כלי אנליטיקה ואין פיקסלים של פרסום, ולכן אין באנר עוגיות. הבקשה החיצונית היחידה היא לגופנים מ־Google Fonts (Heebo ו־IBM Plex Mono), ולכן Google מקבלת את כתובת ה־IP של הדפדפן. הדפדפן שלכם שומר אצלו בלבד (localStorage) רק את השירותים שבחרתם לתור (בלי שם וטלפון) ואת הגדרות הנגישות לנוחות. אפשר למחוק זאת בניקוי נתוני האתר בדפדפן.</p>
+        <p>אפשר למחוק את מה שנשמר בדפדפן כאן:</p>
         <button class="btn btn-soft" type="button" id="wipe" style="min-height:44px;margin:4px 0 6px">מחיקת הנתונים השמורים בדפדפן</button>
-        <h3>צדדים שלישיים</h3>
-        <ul>
-          <li>Google Fonts: הגופנים נטענים מגוגל, ולכן הדפדפן פונה לשרתי גוגל.</li>
-          <li>קישורים לוואטסאפ, Waze, גוגל מפות ופייסבוק נפתחים רק כשלוחצים עליהם, ומרגע זה חלה מדיניות הפרטיות שלהם.</li>
-          <li>האנימציות מובנות בדפדפן. לא נטענות ספריות חיצוניות.</li>
-        </ul>
       </div>
       <div role="tabpanel" id="p-terms" aria-labelledby="t-terms" tabindex="0" hidden>
-        <h3>מחירים וזמינות</h3>
+        <h3>תנאי שימוש</h3>
         <ul>
-          <li>המחירים והזמינות נקבעים על ידי העסק. רק המחיר של תספורת גברים מלאה (₪50) מאומת, מתוך ביקורת בגוגל. שאר המחירים מסומנים "להמחשה".</li>
-          <li>השעות באתר מחושבות משעות הפתיחה בגוגל. בקשת תור היא בקשה בלבד: התור נקבע רק אחרי אישור מאלון בטלפון או בוואטסאפ.</li>
-          <li>אין תשלום באתר, אין עמלות ואין דמי הזמנה. משלמים במספרה.</li>
-          <li>האתר לא אוסף פרטי כרטיס אשראי. תשלום רק במספרה, ובעתיד, אם יהיה, דרך ספק סליקה חיצוני מורשה.</li>
-          <li>אין תוספות שמסומנות מראש ואין "מבצעים" עם שעון.</li>
+        <li>המידע באתר כללי ועשוי להשתנות.</li>
+        <li>המחירים, השירותים, שעות הפתיחה והזמינות נקבעים על ידי אלון ויכולים להשתנות ללא הודעה מוקדמת. רק המחיר של תספורת גברים מלאה (₪50) מאומת, מתוך ביקורת בגוגל; שאר המחירים מסומנים ״להמחשה״ ואינם הצעה מחייבת. הקובע הוא מה שנמסר לכם באישור.</li>
+        <li>תמונות שמסומנות ״להמחשה״ נועדו להמחשה בלבד, והמוצר בפועל עשוי להיראות אחרת.</li>
+        <li>בקשת תור מחייבת רק אחרי שאלון אישר אותה בטלפון או בוואטסאפ. הזמינות אינה מובטחת.</li>
+        <li>השעות הפנויות באתר מחושבות משעות הפתיחה בגוגל, ואינן יומן אמיתי של המספרה.</li><li>אין תשלום באתר, אין עמלות ואין דמי הזמנה. משלמים במספרה. האתר לא אוסף פרטי כרטיס אשראי.</li><li>אין תוספות שמסומנות מראש ואין ״מבצעים״ עם שעון.</li><li>ככל שהחוק מתיר, העסק אינו אחראי לנזק שנגרם מתקלה או מהשבתה של האתר, או מטעות הקלדה במחיר או בפרט אחר. טעות ברורה אינה מחייבת.</li>
+        <li>הדין החל הוא דין מדינת ישראל. סמכות השיפוט לבתי המשפט במחוז <span class="ph-hold">[לעדכון ע״י בעל העסק] (למשל: מחוז חיפה)</span>.</li>
         </ul>
         <h3>ביטול או שינוי תור</h3>
-        <p>ביטול או שינוי בטלפון או בוואטסאפ, עד <span class="ph-hold">X שעות</span> לפני התור. <span class="small">(טקסט זמני, יאושר ויעודכן על ידי העסק)</span></p>
-        <h3>ביקורות</h3>
-        <p>הדירוג 5.0 ו-178 הביקורות הם הנתונים בגוגל נכון להכנת ההדגמה. הציטוטים באתר הם תרגום חופשי וקיצור של ביקורות אמיתיות בגוגל, ללא שמות.</p>
+        <p>בקשת תור נחשבת סופית רק אחרי אישור בטלפון או בוואטסאפ.</p>
+        <p><b>איך מבטלים:</b> בטלפון <span dir="ltr">053-544-3241</span>. עד כמה זמן לפני התור אפשר לבטל או לשנות (בטלפון או בוואטסאפ): <span class="ph-hold">[לעדכון ע״י בעל העסק]</span>.</p>
+        <p>ביטול עסקה ייעשה בכפוף לחוק הגנת הצרכן. באתר לא נגבים דמי ביטול.</p>
       </div>
       <div role="tabpanel" id="p-a11y" aria-labelledby="t-a11y" tabindex="0" hidden>
         <h3>הצהרת נגישות</h3>
-        <p>אנו רוצים שכל אחד יוכל לקבוע תור בקלות. האתר נבנה במטרה לעמוד בתקן הישראלי ת"י 5568, ברמת AA של הנחיות WCAG 2.1.</p>
-        <h3>מה נעשה</h3>
-        <ul>
-          <li>תפריט נגישות: הגדלת טקסט, ניגודיות גבוהה, עצירת אנימציות, הדגשת קישורים וגופן קריא. הבחירה נשמרת בדפדפן.</li>
-          <li>ניווט מלא במקלדת, קישור "דלג לקביעת תור", מיקוד נראה לעין, וחלונות שנסגרים במקש Esc.</li>
-          <li>טקסט חלופי בעברית לכל התמונות, כותרות בסדר הגיוני ואזורי עמוד מסומנים.</li>
-          <li>ניגודיות צבעים של 4.5:1 לפחות לטקסט, ותמיכה בהגדרת "הפחתת תנועה" של המכשיר.</li>
-          <li>שדות טופס עם תוויות, והודעות שגיאה שמוקראות לקוראי מסך.</li>
-        </ul>
-        <h3>נתקלתם בבעיה?</h3>
-        <p>נשמח לשמוע ולתקן. פנייה בנושא נגישות: אלון מלכה, טלפון <span class="phone" style="font-size:.9rem">053-544-3241</span>. נגישות המספרה עצמה (חניה, כניסה): <span class="ph-hold">יעודכן על ידי העסק</span>.</p>
-        <p class="small">עדכון אחרון: 2 בנובמבר 2026.</p>
+        <p>אנחנו פועלים להנגשת האתר של אלון מלכה · Man Hair Design לפי תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע״ג-2013, ולפי התקן הישראלי ת״י 5568 ברמה AA.</p>
+        <p><b>מה נעשה באתר:</b></p>
+        <ul><li>תפריט נגישות: הגדלת טקסט, ניגודיות גבוהה, עצירת אנימציות, הדגשת קישורים וגופן קריא. הבחירה נשמרת בדפדפן.</li><li>ניווט מלא במקלדת, קישור ״דלג לקביעת תור״, מיקוד נראה לעין, וחלונות שנסגרים במקש Esc.</li><li>טקסט חלופי בעברית לתמונות, כותרות בסדר הגיוני ואזורי עמוד מסומנים.</li><li>ניגודיות צבעים של 4.5:1 לפחות לטקסט, ותמיכה בהגדרת ״הפחתת תנועה״ של המכשיר.</li><li>שדות טופס עם תוויות, והודעות שגיאה שמוקראות לקוראי מסך.</li></ul>
+        <p><b>מגבלות ידועות:</b></p>
+        <ul><li>גלריית העבודות נגללת לצדדים; אפשר לדפדף גם בכפתורים ובחיצי המקלדת.</li><li>קישורים חיצוניים (וואטסאפ, Waze, Google Maps, Facebook) מובילים לאתרים שאינם בשליטתנו.</li><li>האתר טרם נבדק על ידי מורשה נגישות. אם משהו לא עובד לכם, נשמח לשמוע.</li></ul>
+        <p><b>רכז/ת נגישות:</b> שם <span class="ph-hold">[לעדכון ע״י בעל העסק]</span>, טלפון <span class="ph-hold">[לעדכון ע״י בעל העסק]</span>. אפשר לפנות גם לטלפון העסק <span dir="ltr">053-544-3241</span>. נתקלתם בבעיה? ספרו לנו ונתקן.</p>
+        <p><b>נגישות המקום:</b> <span class="ph-hold">[לעדכון ע״י בעל העסק] (כניסה, חניית נכים, שירותים נגישים)</span></p>
+        <p>ההצהרה עודכנה: נובמבר 2026.</p>
       </div>
       <div role="tabpanel" id="p-biz" aria-labelledby="t-biz" tabindex="0" hidden>
         <h3>פרטי העסק</h3>
@@ -733,22 +737,22 @@ html.a-still *,html.a-still *::before,html.a-still *::after{animation:none!impor
           <li>אלון מלכה · Man Hair Design</li>
           <li>הזית 8, עכו</li>
           <li>טלפון: <span class="phone" style="font-size:.9rem">053-544-3241</span></li>
-          <li>ח.פ./ע.מ.: <span class="ph-hold">יעודכן</span></li>
+          <li>ח.פ./ע.מ.: <span class="ph-hold">[לעדכון ע״י בעל העסק]</span></li>
         </ul>
-        <h3>תמונות</h3>
+        <h3>קניין רוחני ותמונות</h3>
         <ul>
-          <li>של העסק (מעמוד הפייסבוק שלו): המספרה, עמדת החפיפה, כיסא המכונית וכל תמונות התספורות בגלריה ובשירותים.</li>
-          <li>נוצרו להמחשה: כוס השתייה, סידור הזקן והילד בגלימה. הן מסומנות "להמחשה".</li>
+        <li>של העסק (מעמוד הפייסבוק שלו): המספרה, עמדת החפיפה, כיסא המכונית וכל תמונות התספורות בגלריה ובשירותים. השימוש בהן באישור בעל העסק <span class="ph-hold">[לעדכון ע״י בעל העסק] (אישור בעל העסק)</span>.</li>
+        <li>להמחשה בלבד: כוס השתייה, סידור הזקן והילד בגלימה. הן מסומנות ״להמחשה״ ואינן מתעדות את העסק.</li>
+        <li>הדירוג 5.0 ו־178 הביקורות הם הנתונים בגוגל נכון להכנת ההדגמה. הציטוטים באתר הם תרגום חופשי וקיצור של ביקורות אמיתיות בגוגל, ללא שמות.</li><li>גופנים: Heebo ו־IBM Plex Mono (Google Fonts), ברישיון SIL Open Font License.</li>
+        <li>השם, הלוגו והסימנים המסחריים של אלון שייכים לעסק. אין להעתיק תמונות או תכנים מהאתר בלי אישור.</li>
         </ul>
-        <h3>רישיונות</h3>
+        <h3>קוד, אייקונים ופרסום</h3>
         <ul>
-          <li>גופנים: Heebo ו-IBM Plex Mono מ-Google Fonts, ברישיון SIL Open Font License.</li>
           <li>אייקונים: ציורי SVG פשוטים שנכתבו במיוחד לאתר. האנימציות מובנות בדפדפן, בלי ספריות חיצוניות.</li>
+          <li>באתר אין קישורי שותפים (affiliate) ואין פרסום ממומן.</li>
         </ul>
-        <h3>קישורי שותפים ופרסום</h3>
-        <p>באתר אין קישורי שותפים (affiliate) ואין פרסום ממומן.</p>
         <h3>על האתר</h3>
-        <p>אתר הדגמה שעוצב כהצעה לעסק. אינו האתר הרשמי של אלון מלכה.</p>
+        <p>אתר לדוגמה שהוכן עבור אלון מלכה. אינו האתר הרשמי של העסק עד לאישורו.</p>
       </div>
     </div>
   </div>
@@ -900,11 +904,11 @@ function renderBook(focus){
   }
   if(s===4){
     h+='<div class="recap">'+seq().map(function(i,j){return '<div><span>'+esc(i.name)+'</span><span class="mono">⁦'+fmt(bk.slot+j*30)+'⁩</span></div>'}).join("")+'<div><span>'+esc(dayFull(bk.day))+'</span><span>'+range(bk.slot)+'</span></div></div>';
-    h+='<div class="f2"><div class="fld"><label for="bn">שם</label><input id="bn" autocomplete="name" maxlength="40" required value="'+esc(bk.name)+'"></div>'+
-       '<div class="fld"><label for="bp">טלפון לאישור</label><input id="bp" type="tel" inputmode="tel" autocomplete="tel" maxlength="14" required dir="ltr" value="'+esc(bk.phone)+'"></div></div>'+
-       '<div class="fld"><label for="bnote">משהו שאלון צריך לדעת? (לא חובה)</label><textarea id="bnote" rows="2" maxlength="300" placeholder="למשל: פייד נמוך, לא לגעת באורך למעלה">'+esc(bk.note)+'</textarea></div>'+
+    h+='<div class="f2"><div class="fld"><label for="bn">שם</label><input id="bn" autocomplete="name" maxlength="40" required></div>'+
+       '<div class="fld"><label for="bp">טלפון לאישור</label><input id="bp" type="tel" inputmode="tel" autocomplete="tel" maxlength="14" pattern="0[0-9 \\-]{8,11}" required dir="ltr"></div></div>'+
+       '<div class="fld"><label for="bnote">משהו שאלון צריך לדעת? (לא חובה)</label><textarea id="bnote" rows="2" maxlength="300" placeholder="למשל: פייד נמוך, לא לגעת באורך למעלה"></textarea></div>'+
        '<div class="hp" aria-hidden="true"><label for="bco">חברה</label><input id="bco" name="company" type="text" tabindex="-1" autocomplete="off"></div>'+
-       '<label class="consent"><input type="checkbox" id="bc" required'+(bk.consent?' checked':'')+'><span>אני מאשר/ת שהפרטים ישמשו רק לטיפול בבקשת התור. <button type="button" class="linkbtn" data-legal="privacy">מדיניות פרטיות</button></span></label>';
+       '<label class="consent"><input type="checkbox" id="bc" required><span>אני מאשר/ת שהפרטים ישמשו לטיפול בהזמנת התור בלבד. <button type="button" class="linkbtn" data-legal="privacy">מדיניות פרטיות</button></span></label>';
   }
   if(s===5){
     h='<div class="ok"><div class="okic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path id="okPath" d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>'+
@@ -913,9 +917,10 @@ function renderBook(focus){
       seq().map(function(i,j){return '<div style="display:flex;justify-content:space-between;gap:8px"><span>'+esc(i.name)+'</span><span class="mono">⁦'+fmt(bk.slot+j*30)+'⁩</span></div>'}).join("")+
       '<div style="display:flex;justify-content:space-between;gap:8px;font-weight:700;margin-top:4px"><span>סה״כ'+(anyEst()?' משוער':'')+', משלמים במקום</span><span>'+ils(total())+'</span></div></div></div>'+
       '<p class="small">כך הבקשה תיראה אצל אלון בוואטסאפ:</p><div class="wa" id="waMsg"></div>'+
-      '<p class="small">בגרסת ההדגמה הבקשה לא נשלחת. באתר החי היא תגיע לאלון, והתור ייקבע רק אחרי אישור ממנו. ביטול או שינוי: בטלפון, עד <span class="ph-hold">X שעות</span> לפני.</p></div>';
+      '<p class="small">בגרסת ההדגמה הבקשה לא נשלחת. באתר החי היא תגיע לאלון, והתור ייקבע רק אחרי אישור ממנו. ביטול או שינוי: בטלפון, לפי תנאי הביטול <span class="ph-hold">[לעדכון ע״י בעל העסק]</span>.</p></div>';
   }
   $("#bkBody").innerHTML=h;
+  if(s===4){$("#bn").value=bk.name;$("#bp").value=bk.phone;$("#bnote").value=bk.note;$("#bc").checked=!!bk.consent;}
   if(s===5)$("#waMsg").textContent=bk.msg;
   /* footer */
   var f="";
@@ -936,7 +941,8 @@ function renderBook(focus){
   /* success: the check draws itself (500ms after an 80ms beat) inside a ring that blurs in; the ticket follows */
   if(s===5){anim($(".okic"),[{opacity:0,filter:"blur(8px)",transform:"scale(.96)"},{opacity:1,filter:"blur(0)",transform:"none"}],{duration:500,easing:EO,fill:"backwards"});
     anim($("#okPath"),[{strokeDashoffset:21},{strokeDashoffset:0}],{duration:500,easing:EO,fill:"backwards",delay:80});
-    anim($(".ticket"),[{opacity:0,transform:"translateY(8px)",filter:"blur(2px)"},{opacity:1,transform:"none",filter:"blur(0)"}],{duration:400,easing:EO,fill:"backwards",delay:200})}
+    anim($(".ticket"),[{opacity:0,transform:"translateY(8px)",filter:"blur(2px)"},{opacity:1,transform:"none",filter:"blur(0)"}],{duration:400,easing:EO,fill:"backwards",delay:200});
+    cart={};save();bk.name="";bk.phone="";bk.note="";bk.consent=false;bk.hp="";$("#bkCount").textContent="0 שירותים";tn.textContent="0";tn.dataset.n="0";ALL.forEach(function(i){var q=$("#mq-"+i.id);if(q)q.textContent=""});}
   if(s===3&&bk.slot!=null&&focus==="slot"){var ch=$$("#bkBody .slot.chain, #bkBody .slot[aria-pressed='true']");var sc=stg(ch.length);ch.forEach(function(el,i){anim(el,[{transform:"scale(.96)"},{transform:"none"}],{duration:250,delay:i*sc,easing:EO})});
     var cl=$$("#bkBody .chainlist li"),sl2=stg(cl.length);cl.forEach(function(el,i){anim(el,[{opacity:0,transform:"translateX(-8px)"},{opacity:1,transform:"none"}],{duration:250,delay:i*sl2,easing:EO,fill:"backwards"})})}
   if(focus===true){var hd=$("#bkStepH");if(hd)hd.focus({preventScroll:true})}
@@ -972,7 +978,7 @@ $("#book").addEventListener("click",function(e){
   if((b=t.closest("[data-slot]"))){if(b.disabled)return;bk.slot=+b.dataset.slot;bk.pinned=false;renderBook("slot");var s3=$('#bkBody [data-slot="'+bk.slot+'"]');if(s3)s3.focus();return}
   if(t.closest("[data-back]")){go(bk.step===4?3:bk.step===3?2:1,true);return}
   if(t.closest("#copyReq")){copy(bk.msg,"הבקשה הועתקה. בגרסת ההדגמה היא לא נשלחת.");return}
-  if(t.closest("#newBk")){cart={};save();bk.slot=null;bk.day=null;bk.seg=null;bk.note="";bk.consent=false;go(1,true);return}
+  if(t.closest("#newBk")){cart={};save();bk.msg="";bk.slot=null;bk.day=null;bk.seg=null;bk.note="";bk.consent=false;go(1,true);return}
   if(t.closest("[data-next]")){
     grab();var s=bk.step;
     if(s===1){if(!count())return err("קודם בוחרים לפחות שירות אחד.");return go(bk.day&&dayList().some(function(x){return x.k===bk.day.k})?3:2)}
